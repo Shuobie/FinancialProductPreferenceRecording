@@ -18,14 +18,14 @@ public class LikeListController {
 
     private final LikeListService likeListService;
 
-    // POST /api/favorites — 新增喜好商品
+    // 新增
     @PostMapping
     public ResponseEntity<ApiResponse<Void>> add(@Valid @RequestBody LikeListRequest req) {
         likeListService.addLikeProduct(req);
         return ResponseEntity.ok(ApiResponse.ok("新增成功", null));
     }
 
-    // GET /api/favorites?userId=xxx — 查詢喜好清單
+    // 查詢
     @GetMapping
     public ResponseEntity<ApiResponse<List<LikeListResponse>>> get(
             @RequestParam("userId") String userId) {
@@ -33,7 +33,7 @@ public class LikeListController {
         return ResponseEntity.ok(ApiResponse.ok(list));
     }
 
-    // DELETE /api/favorites/{sn}?userId=xxx — 刪除喜好商品
+    // 刪除
     @DeleteMapping("/{sn}")
     public ResponseEntity<ApiResponse<Void>> delete(
             @PathVariable("sn") Integer sn,
@@ -42,7 +42,7 @@ public class LikeListController {
         return ResponseEntity.ok(ApiResponse.ok("刪除成功", null));
     }
 
-    // PUT /api/favorites/{sn} — 更改喜好商品
+    // 更改
     @PutMapping("/{sn}")
     public ResponseEntity<ApiResponse<Void>> update(
             @PathVariable("sn") Integer sn,

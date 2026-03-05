@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
-public class LikeListRequest {
+public class LikeListRequest { // 接收前端進行新增修改時傳回的資料
 
     @NotBlank(message = "UserID 不可為空")
     private String userId;

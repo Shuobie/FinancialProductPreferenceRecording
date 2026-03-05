@@ -16,7 +16,7 @@ public class ProductController {
 
     private final ProductService productService;
 
-    // GET /api/products — 取得所有產品 (供前端下拉選單)
+    // 取得所有產品
     @GetMapping
     public ResponseEntity<ApiResponse<List<Product>>> getAll() {
         return ResponseEntity.ok(ApiResponse.ok(productService.getAllProducts()));

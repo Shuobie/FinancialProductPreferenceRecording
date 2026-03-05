@@ -1,4 +1,3 @@
--- H2 Schema 定義
 
 DROP TABLE IF EXISTS LikeList;
 DROP TABLE IF EXISTS Products;
@@ -29,3 +28,4 @@ CREATE TABLE LikeList (
     CONSTRAINT fk_likelist_user    FOREIGN KEY (UserID)    REFERENCES Users(UserID),
     CONSTRAINT fk_likelist_product FOREIGN KEY (ProductNo) REFERENCES Products(No)
 );
+
