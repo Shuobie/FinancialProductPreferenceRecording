@@ -8,7 +8,7 @@
 
 ## 一、系統概述
 
-本系統為一套金融商品喜好紀錄平台，使用者可透過 Web 介面對個人喜好的金融商品進行新增、查詢、修改與刪除（CRUD）操作，並記錄預計購買數量、扣款帳號及預估費用。本專案採 H2 記憶體資料庫架構，支援「開箱即用」無需額外安裝外部資料庫軟體。
+本系統為一套金融商品喜好紀錄平台，使用者可透過 Web 介面對個人喜好的金融商品進行 CRUD 操作，並記錄預計購買數量、扣款帳號及預估費用。採 H2 記憶體資料庫架構。
 
 ---
 
@@ -146,7 +146,7 @@ FinancialProductPreferenceRecording/
 
 ---
 
-## 八、本機啟動步驟（開箱即用版）
+##八、啟動
 
 ### 1. 後端 (Spring Boot + H2)
 
@@ -154,7 +154,7 @@ FinancialProductPreferenceRecording/
 cd backend
 mvn spring-boot:run
 ```
-> 後端啟動後，H2 資料庫即自動載入並運行於記憶體中，您可以直接前往 `http://localhost:8080/h2-console` 觀看資料庫內容。
+> 後端啟動後，H2 資料庫即自動載入並運行於記憶體中，直接前往 `http://localhost:8080/h2-console` 觀看資料庫內容。
 > * **JDBC URL**: `jdbc:h2:mem:finance_db`
 > * **User Name**: `sa`
 > * **Password**: (留空)
@@ -170,7 +170,4 @@ npm run dev
 
 ---
 
-## 九、提交與交接說明
 
-直接將整個專案資料夾打包或上傳至 GitHub 交接給任何人即可。
-接收者**完全不需要安裝 MySQL** 或執行另外的 SQL，只需確保有 Java 與 Node.js 環境，下達 `mvn spring-boot:run` 即可直接進行展示及測試（Zero Configuration）。
